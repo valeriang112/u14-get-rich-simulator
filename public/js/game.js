@@ -19,6 +19,8 @@ export default class Game{
     setInterval(() => {
       window.clickDown = false;
     }, 1500);
+
+    window.addEventListener('keyup', this.handle_keys);
   }
 
 	draw(){
@@ -35,6 +37,10 @@ export default class Game{
       window.objects['Cutscene1'].render();
       return 0;
     }
+    if(window.obj_settings['actual_game'] === true){
+      window.objects['ActualGame'].render();
+      return 0;
+    }
 	}
 
   handle_keys(event){
@@ -45,6 +51,8 @@ export default class Game{
     switch(event.key){
       case 'Escape':
         window.obj_settings['MainMenu'] = true;
+      case ' ':
+        window.space_pressed = true;
     }
   }
 }

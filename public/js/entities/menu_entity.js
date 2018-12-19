@@ -19,6 +19,8 @@ export default class menu_entity {
     this.buttons.forEach((item) => {
       if(!window.obj_settings.game_live && item.button_id == 'continue_game'){
         item.disabled = true;
+      } else {
+        item.disabled = false;
       }
       item.render(this.run_btn);
     });
@@ -34,6 +36,7 @@ export default class menu_entity {
       case 'continue_game':
         window.obj_settings.game_paused = false;
         window.obj_settings.MainMenu = false;
+        window.obj_settings.actual_game = true;
         break;
       case 'settings':
         window.obj_settings.settings = true;

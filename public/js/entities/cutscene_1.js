@@ -5,7 +5,10 @@ export default class cutscene_1 {
     this.config = config;
     this.dialogs = []
     this.dialog_index = 0;
-    this.config.dialogs.map((config) => { this.dialogs.push(new dialog_entity(config)); });
+    this.config.dialogs.map((config) => {
+      config.chars = this.config.chars;
+      this.dialogs.push(new dialog_entity(config));
+    });
   }
 
   render(){

@@ -11,9 +11,7 @@ const game_config = {
     "menu_items" : [
       {text: "New Game", x: 300, gap: 10, w: 200, h: 50, rgb: [40, 40, 40], id: "start_game"},
       {text: "Continue Game", x: 300, gap: 10, w: 200, h: 50, rgb: [40, 40, 40], id: "continue_game"},
-      {text: "Settings", x: 300, gap: 10, w: 200, h: 50, rgb: [40, 40, 40], id: "settings"},
       {text: "Send Feedback", x: 300, gap: 10, w: 200, h: 50, rgb: [40, 40, 40], id: "send_feedback"},
-      {text: "Exit", x: 300, gap: 10, w: 200, h: 50, rgb: [40, 40, 40], id: "exit"},
     ]
   },
   "new_game" : {
@@ -34,16 +32,24 @@ const game_config = {
   },
   "cutscene_1" : {
     "entity": "Cutscene1",
+    "chars": {
+      "Robber": { profile: "/img/angry.png" },
+      "Unknown": { profile: "/img/mao.jpg" },
+      "Lisa AI": { profile: "/img/lisa_ai.jpg" },
+    },
     "dialogs":[
-      {text: {inner: "\"Stop!, give me your wallet, turn around and count to 100 if you love your life.\", said a random angry robber", gap: 10, a_gap: 20}, orientation: "left", player_name: "Robber", type: "dialog"},
-      {text: {inner: "\"Oh no!\"", options: [{inner: "Give wallet", outcome: "survive"}, {inner: "Run!", outcome: "death"}], gap: 10, a_gap: 20}, orientation: "right", player_name: "Unknown", type: "option"},
-      {text: {inner: "Welcome to the game, I am your assistant, Lisa.", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "dialog"},
-      {text: {inner: "As you have just seen, you were robbed of all your money at gunpoint, you are now broke af.", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "dialog"},
-      {text: {inner: "You have recently heard of a new technology called Bitcoin and how it can make you rich. Throughout the game, your objective is to upgrade your equipment and mine bitcoin and get rich. Please click the dialog to begin the tutorial", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "dialog"},
+      {text: {inner: "\"Stop!, give me your wallet, turn around and count to 100 if you love your life.\", said a random angry robber", gap: 10, a_gap: 20}, orientation: "left", player_name: "Robber", type: "option", options: [{inner: "Next", outcome: "next"}]},
+      {text: {inner: "\"Oh no!\"",  gap: 10, a_gap: 20}, options: [{inner: "Give wallet", outcome: "next"}, {inner: "                Run!", outcome: "death"}], orientation: "right", player_name: "Unknown", type: "option"},
+      {text: {inner: "Welcome to the game, I am your assistant, Lisa.", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options:[{inner: "                      Continue...", outcome: "next"}]},
+      {text: {inner: "As you have just seen, you were robbed of all your money at gunpoint, you are now broke af.", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options: [{inner: "                          Next...", outcome: "next"}]},
+      {text: {inner: "You have recently heard of a new technology called Bitcoin and how it can make you rich. Throughout the game, your objective is to upgrade your equipment and mine bitcoin and get rich. Please click the dialog to begin the tutorial", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options: [{inner: "                     Begin tutorial", outcome: "survive"}]},
     ]
   },
   "game" : {
-    "entity": "ActualGame"
+    "entity": "ActualGame",
+    "menus": [
+      {inner: "Hardware"}
+    ]
   }
 };
 export default game_config;
