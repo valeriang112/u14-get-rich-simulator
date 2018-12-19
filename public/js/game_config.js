@@ -35,7 +35,7 @@ const game_config = {
     "chars": {
       "Robber": { profile: "/img/angry.png" },
       "Unknown": { profile: "/img/mao.jpg" },
-      "Lisa AI": { profile: "/img/lisa_ai.jpg" },
+      "Lisa AI": { profile: "/img/lisa_ai.png" },
     },
     "dialogs":[
       {text: {inner: "\"Stop!, give me your wallet, turn around and count to 100 if you love your life.\", said a random angry robber", gap: 10, a_gap: 20}, orientation: "left", player_name: "Robber", type: "option", options: [{inner: "Next", outcome: "next"}]},
