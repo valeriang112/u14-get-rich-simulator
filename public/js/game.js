@@ -31,6 +31,10 @@ export default class Game{
       window.objects['NewgameEntity'].render();
       return 0;
     }
+    if(window.obj_settings['start_scene'] === true){
+      window.objects['Cutscene1'].render();
+      return 0;
+    }
 	}
 
   handle_keys(event){

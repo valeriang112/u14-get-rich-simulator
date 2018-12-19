@@ -30,13 +30,13 @@ export default class new_game_entity {
         window.obj_settings.multiplier = 1;
         break;
       case 'hard':
-        window.obj.settings.difficulty = 'hard';
+        window.obj_settings.difficulty = 'hard';
         window.obj_settings.multiplier = 0.5;
         break;
       default:
         return;
     }
     window.obj_settings.start_game = false;
-    window.obj_start_scene = true;
+    window.obj_settings.start_scene = true;
   }
 }
