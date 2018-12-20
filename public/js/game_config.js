@@ -42,7 +42,7 @@ const game_config = {
       {text: {inner: "\"Oh no!\"",  gap: 10, a_gap: 20}, options: [{inner: "Give wallet", outcome: "next"}, {inner: "                Run!", outcome: "death"}], orientation: "right", player_name: "Unknown", type: "option"},
       {text: {inner: "Welcome to the game, I am your assistant, Lisa.", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options:[{inner: "                      Continue...", outcome: "next"}]},
       {text: {inner: "As you have just seen, you were robbed of all your money at gunpoint, you are now broke af.", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options: [{inner: "                          Next...", outcome: "next"}]},
-      {text: {inner: "You have recently heard of a new technology called Bitcoin and how it can make you rich. Throughout the game, your objective is to upgrade your equipment and mine bitcoin and get rich. Please click the dialog to begin the tutorial", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options: [{inner: "                     Begin tutorial", outcome: "survive"}]},
+      {text: {inner: "You have recently heard of a new technology called Bitcoin and how it can make you rich. Throughout the game, your objective is to upgrade your equipment and mine bitcoin and get rich. To accelerate the mining of bitcoin, just press space while playing. Good luck!", gap: 10, a_gap: 20}, orientation: "floating", player_name: "Lisa AI", type: "option", options: [{inner: "                     Begin tutorial", outcome: "survive"}]},
     ]
   },
   "game" : {

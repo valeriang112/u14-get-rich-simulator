@@ -39,6 +39,7 @@ export default class Game{
     }
     if(window.obj_settings['actual_game'] === true){
       window.objects['ActualGame'].render();
+      window.objects['PlayerEntity'].render();
       return 0;
     }
 	}

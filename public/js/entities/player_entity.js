@@ -2,8 +2,7 @@ export default class player_entity {
   constructor(config){
     this.name = config.name;
     this.player_avatar = window.p5.loadImage(config.avatar);
-    this.money_has = "130000";
-    this.money_needed = "1500000";
+    this.money_needed = "0.5";
   }
 
   render(){
@@ -16,13 +15,13 @@ export default class player_entity {
     window.p5.fill(255, 255, 255);
     window.p5.rect(65, 3, 230, 20);
     window.p5.fill(212, 175, 55)
-    window.p5.rect(65, 3, (230 * (this.money_has / this.money_needed)), 20);
+    window.p5.rect(65, 3, (230 * ((window.score / 100000) / this.money_needed)), 20);
   }
 
   draw_money_amm(){
     window.p5.fill(12, 12, 12);
     window.p5.textSize(10);
-    window.p5.text(`${this.money_has}mBTC/${this.money_needed}mBTC`, 100, 17);
+    window.p5.text(`${window.score/100000}BTC/${this.money_needed}BTC`, 100, 17);
   }
 
   draw_name(){
