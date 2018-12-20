@@ -5,6 +5,7 @@ export default class actual_game {
     window.score = 0;
     this.miner = window.p5.loadImage("/img/pc.png");
     this.btc_system = new particle_system(window.p5.createVector(width/2, 650));
+    this.coin_sounds = window.p5.loadSound("/img/coin.wav")
     setInterval(()=>{window.space_pressed=true}, 750);
   }
 
@@ -15,6 +16,7 @@ export default class actual_game {
     window.p5.image(this.miner, 370, 690, 80, 80);
     if(window.space_pressed){
       this.increase_score();
+      this.coin_sounds.play();
       this.btc_system.add_particle();
       window.space_pressed = false;
     }
