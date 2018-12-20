@@ -3,8 +3,6 @@
 	<head>
     <script src="/js/p5.min.js"></script>
     <script src="/js/p5.sound.js"></script>
-    <script src="/u14-get-rich-simulator/js/p5.sound.js"></script>
-    <script src="/u14-get-rich-simulator/js/p5.min.js"></script>
     <style>
       body {
         background-color: #323232;
@@ -12,8 +10,11 @@
     </style>
 	</head>
   <body>
+    <script src="/u14-get-rich-simulator/js/p5.sound.js"></script>
+    <script src="/u14-get-rich-simulator/js/p5.min.js"></script>
     <script type="module" src="js/game.js"></script>
     <script>
+      p5 = window.p5;
 			let setup = () => {
 			};
 
